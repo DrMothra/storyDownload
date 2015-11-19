@@ -7,13 +7,15 @@
  */
 
 $userName = $_POST["username"];
-echo $userName;
 if ($userName === "" ) {
     echo "No username";
     return;
 }
 
+$userName .= '_';
 $uploadDir = "./uploads";
 $stories = glob("$uploadDir/$userName*.mp3");
 
 echo json_encode($stories);
+?>
+
